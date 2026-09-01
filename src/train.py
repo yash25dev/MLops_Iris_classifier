@@ -9,6 +9,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report
 
+# after computing preds:
+
+
+
 
 def load_data():
     iris = load_iris()
@@ -29,6 +33,7 @@ def evaluate_model(model, X_test, y_test):
     predictions = model.predict(X_test)
     acc = accuracy_score(y_test, predictions)
     report = classification_report(y_test, predictions)
+    print(classification_report(y_test, predictions))
     return acc, report
 
 
