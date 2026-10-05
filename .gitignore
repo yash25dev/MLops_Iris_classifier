@@ -21,3 +21,9 @@ mlruns/
 # IDE
 .vscode/
 .idea/
+
+# Python virtual environments
+.venv-feast/
+.venv-mlflow/
+venvsfeast/
+practical5_feast/.venv-feast/

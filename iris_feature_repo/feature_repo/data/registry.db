@@ -1,0 +1,90 @@
+
+H
+(
+__dummy"
+__dummy_idJiris_feature_repo
+•›ÆÕğØ£½î«ÉÕè¯¨„
+K
++
+	sample_id"	sample_idJiris_feature_repo
+ĞÀËÕğÃ²äĞÀËÕğÃ²ä1"$d9c14718-22f6-41cd-af07-f231d67f6d66*å¦ĞÕ åÑó2Ò
+á
+iris_engineered_featuresiris_feature_repo	sample_id"
+
+sepal_area"
+
+petal_area"
+sepal_to_petal_length_ratio"
+petal_length_bin2€ç„:®event_timestamp*created_timestampZdata/iris_features.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢iris_features_source’ä ĞÕøÕŒ"ä ĞÕøÕŒ@b
+	sample_id’latestl
+ĞÀËÕğÃ²äå¦ĞÕààõ©
+âÚÆÆºïó×ÁËÕ
+×ÁËÕ¡ÇËÕ
+¢‡‚Ô¡ÇËÕ
+¡ÇËÕ¥ÁÑÕ02Î
+İ
+iris_measurementsiris_feature_repo	sample_id"
+sepal length (cm)"
+sepal width (cm)"
+petal length (cm)"
+petal width (cm)2€ç„:®event_timestamp*created_timestampZdata/iris_features.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢iris_features_source’ä ĞÕøÕŒ"ä ĞÕøÕŒ@b
+	sample_id’latestl
+ĞÀËÕ ÷ïäå¦ĞÕ åÑó
+âÚÆÆºïó×ÁËÕ
+×ÁËÕ¡ÇËÕ
+¢‡‚Ô¡ÇËÕ
+¡ÇËÕ¥ÁÑÕ0:Œ
+ë
+iris_feature_serviceiris_feature_repoœ
+iris_measurements
+sepal length (cm)
+sepal width (cm)
+petal length (cm)
+petal width (cm)*created_timestamp:created_timestampBzevent_timestamp*created_timestampZdata/iris_features.parquet¢iris_features_source’¢ÆËÕßô†"¢ÆËÕßô†ZfeatureView 
+iris_engineered_features
+
+sepal_area
+
+petal_area
+sepal_to_petal_length_ratio
+petal_length_bin*created_timestamp:created_timestampBzevent_timestamp*created_timestampZdata/iris_features.parquet¢iris_features_source’¢ÆËÕßô†"¢ÆËÕßô†ZfeatureView
+ĞÀËÕ ÷ïä¢ÆËÕĞ¿é¢R›
+Î
+,feast.infra.online_stores.sqlite.SqliteTable"
+oC:\Users\YASH SHARMA\OneDrive\Desktop\MLops_Iris_classifier\iris_feature_repo\feature_repo\data\online_store.db*iris_feature_repo_iris_engineered_features
+Ç
+,feast.infra.online_stores.sqlite.SqliteTable"–
+oC:\Users\YASH SHARMA\OneDrive\Desktop\MLops_Iris_classifier\iris_feature_repo\feature_repo\data\online_store.db#iris_feature_repo_iris_measurementsbÂevent_timestamp*created_timestampZdata/iris_features.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢iris_features_sourceªiris_feature_repo’Ê¶ÉÕ€åÓá"ĞÀËÕÀíÖãŠ3
+
+iris_feature_repo
+•›ÆÕ¨Ô•©î«ÉÕ¬Äõ’¨
+ô
+iris_engineered_featuresiris_feature_repo"feature_view*‚
+á
+iris_engineered_featuresiris_feature_repo	sample_id"
+
+sepal_area"
+
+petal_area"
+sepal_to_petal_length_ratio"
+petal_length_bin2€ç„:®event_timestamp*created_timestampZdata/iris_features.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢iris_features_source’Ê¶ÉÕ€åÓá"ĞÀËÕÀíÖã@b
+	sample_id’latest
+ĞÀËÕğÃ²äĞÀËÕğÃ²ä2ĞÀËÕ ÷ïäB$99a00a16-942a-4e2b-9a39-27c514623028
+¦
+iris_measurementsiris_feature_repo"feature_view*»
+š
+iris_measurementsiris_feature_repo	sample_id"
+sepal length (cm)2€ç„:®event_timestamp*created_timestampZdata/iris_features.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢iris_features_source’Ê¶ÉÕ€åÓá"ĞÀËÕÀíÖã@b
+	sample_id’latest
+ĞÀËÕ ÷ïäĞÀËÕ ÷ïä2ĞÀËÕ ÷ïäB$290a0265-228f-49e6-98d0-592b81485dbc
+…
+iris_measurementsiris_feature_repo"feature_view*˜
+İ
+iris_measurementsiris_feature_repo	sample_id"
+sepal length (cm)"
+sepal width (cm)"
+petal length (cm)"
+petal width (cm)2€ç„:®event_timestamp*created_timestampZdata/iris_features.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢iris_features_source’¢ÆËÕßô†"¢ÆËÕßô†@b
+	sample_id’latest6
+ĞÀËÕ ÷ïä¢ÆËÕàÇ°¡
+âÚÆÆºïó×ÁËÕ 2¢ÆËÕøÑ§¢B$8d1a31c5-1d73-4b70-99a7-e57a94d86dcc
