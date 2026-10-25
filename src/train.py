@@ -12,8 +12,6 @@ from sklearn.metrics import accuracy_score, classification_report
 # after computing preds:
 
 
-
-
 def load_data():
     iris = load_iris()
     return train_test_split(
