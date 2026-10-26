@@ -27,3 +27,5 @@ mlruns/
 .venv-mlflow/
 venvsfeast/
 practical5_feast/.venv-feast/
+.venv-sklearn-test/
+.venv-mlflow/
