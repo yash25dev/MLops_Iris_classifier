@@ -27,3 +27,16 @@ mlruns/
 .venv-mlflow/
 venvsfeast/
 practical5_feast/.venv-feast/
+
+# Local testing environment and generated reports
+.venv-sklearn-test/
+.coverage
+test-results.xml
+coverage.xml
+mlflow.db
+mlartifacts/
+confusion_matrix_*.png
+
+# Generated pipeline data
+data/processed/
+data/raw/iris_raw.csv
