@@ -116,3 +116,5 @@ jobs:
             --output data/processed/iris_features.csv
       - name: Validate model quality
         run: python -m pytest tests/test_model_quality.py -v
+        env:
+          MIN_ACCEPTABLE_ACCURACY: "0.999"
