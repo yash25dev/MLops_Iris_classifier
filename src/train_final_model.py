@@ -1,4 +1,7 @@
-"""Train and save the Iris classifier for Docker deployment. Trains and serializes the final model artifact to be packaged into the Docker image."""
+"""Train and save the Iris classifier for Docker deployment.
+
+Trains and serializes the final model artifact for the Docker image.
+"""
 import os
 import joblib
 import pandas as pd
@@ -16,6 +19,8 @@ FEATURE_COLS = [
     "petal_area",
     "sepal_to_petal_length_ratio",
 ]
+
+
 def main():
     df = pd.read_csv(DATA_PATH)
     X = df[FEATURE_COLS].copy()
@@ -39,5 +44,7 @@ def main():
     print(f"Features: {FEATURE_COLS}")
     print(f"Classes: {list(label_encoder.classes_)}")
     print("Saved model and label encoder.")
+
+
 if __name__ == "__main__":
     main()

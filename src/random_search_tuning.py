@@ -68,7 +68,10 @@ def run_random_search(data_path: str):
         results_df.to_csv("random_search_all_candidates.csv", index=False)
         mlflow.log_artifact("random_search_all_candidates.csv")
 
-        print(f"Random Search evaluated {N_ITER} combinations x 5 folds = {N_ITER * 5} total fits")
+        print(
+            f"Random Search evaluated {N_ITER} combinations x 5 folds = "
+            f"{N_ITER * 5} total fits"
+        )
         print(f"Best params: {search.best_params_}")
         print(f"Best CV f1_macro: {search.best_score_:.4f}")
         print(f"Test accuracy: {test_score:.4f}")

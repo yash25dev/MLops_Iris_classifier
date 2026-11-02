@@ -32,7 +32,8 @@ def run_baseline(data_path: str):
 
     with mlflow.start_run(run_name="baseline_decision_tree"):
         model = DecisionTreeClassifier(random_state=42)  # all defaults
-        cv_scores = cross_val_score(model, X_train, y_train, cv=5, scoring="f1_macro")
+        cv_scores = cross_val_score(
+            model, X_train, y_train, cv=5, scoring="f1_macro")
 
         mlflow.log_param("model_type", "DecisionTreeClassifier_default")
         mlflow.log_metric("cv_f1_macro_mean", cv_scores.mean())
@@ -42,7 +43,10 @@ def run_baseline(data_path: str):
         test_score = model.score(X_test, y_test)
         mlflow.log_metric("test_accuracy", test_score)
 
-        print(f"Baseline CV f1_macro: {cv_scores.mean():.4f} (+/- {cv_scores.std():.4f})")
+        print(
+            f"Baseline CV f1_macro: {cv_scores.mean():.4f} "
+            f"(+/- {cv_scores.std():.4f})"
+        )
         print(f"Baseline test accuracy: {test_score:.4f}")
         return cv_scores.mean()
 

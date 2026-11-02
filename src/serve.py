@@ -1,4 +1,7 @@
-"""HTTP server for the containerized Iris classifier. Minimal HTTP serving script for the containerized model, using Python's built-in http.server to avoid any additional dependency    for this container-focused experiment """
+"""HTTP server for the containerized Iris classifier.
+
+Uses Python's built-in http.server to avoid additional dependencies.
+"""
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import joblib
@@ -16,6 +19,8 @@ FEATURE_ORDER = [
 ]
 model = joblib.load(MODEL_PATH)
 label_encoder = joblib.load(ENCODER_PATH)
+
+
 class PredictionHandler(BaseHTTPRequestHandler):
     def _respond(self, status, payload):
         response = json.dumps(payload).encode("utf-8")
@@ -24,11 +29,13 @@ class PredictionHandler(BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(response)))
         self.end_headers()
         self.wfile.write(response)
+
     def do_GET(self):
         if self.path == "/health":
             self._respond(200, {"status": "healthy"})
         else:
             self._respond(404, {"error": "not found"})
+
     def do_POST(self):
         if self.path != "/predict":
             self._respond(404, {"error": "not found"})
@@ -64,6 +71,8 @@ class PredictionHandler(BaseHTTPRequestHandler):
                 "probabilities": probabilities,
             },
         )
+
+
 if __name__ == "__main__":
     server = HTTPServer(("0.0.0.0", 8000), PredictionHandler)
     print("Iris server listening on port 8000")
