@@ -1,16 +1,19 @@
-# src/pipeline/validate.py
 """
 Stage 4: Data Validation.
 Schema and statistical checks that must pass before data can
 flow downstream to training. Raises on failure to hard-stop the pipeline.
 """
+
 import argparse
 import logging
 import sys  # interacts with the Python system
 
 import pandas as pd
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
 logger = logging.getLogger("validate")
 
 EXPECTED_COLUMNS = {
@@ -52,7 +55,9 @@ def validate(input_path: str) -> pd.DataFrame:
         out_of_range = df[(df[col] < low) | (df[col] > high)]
         if not out_of_range.empty:
             errors.append(
-                f"{len(out_of_range)} rows out of expected range for '{col}' ({low}-{high})")
+                f"{len(out_of_range)} rows out of expected range "
+                f"for '{col}' ({low}-{high})"
+            )
 
     if errors:
         for e in errors:
@@ -62,19 +67,26 @@ def validate(input_path: str) -> pd.DataFrame:
             + "; ".join(errors)
         )
 
-    logger.info("Validation PASSED: %d rows, %d columns, all checks satisfied",
-                len(df), df.shape[1])
+    logger.info(
+        "Validation PASSED: %d rows, %d columns, all checks satisfied",
+        len(df), df.shape[1]
+    )
     return df
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", default="data/processed/iris_features.csv")
+    parser.add_argument(
+        "--input",
+        default="data/processed/iris_features.csv"
+    )
     args = parser.parse_args()
+
     try:
         validate(args.input)
     except DataValidationError as e:
         logger.error("Pipeline halted: %s", e)
         sys.exit(1)  # stops the Python program and reports that it failed.
+
 # sys.exit(0) means: Program finished successfully.
 # sys.exit(1) means: Program ended with an error/failure.
